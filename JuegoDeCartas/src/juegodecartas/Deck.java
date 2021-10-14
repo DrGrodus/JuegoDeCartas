@@ -34,6 +34,7 @@ public class Deck {
             card.get(0); // tomamos la carta de la parte superior
             numCard--; // inmediatamente restamos al total de cartas
             String respuesta = "Tarjeta: " + " color: " + card.get(0).getColor() + " palo: "+card.get(0).getPalo() + " valor: " + card.get(0).getValor() + "\n" + "Quedan: " + numcard;
+            card.remove(0);
             return respuesta; // devolvemos la respuesta
             
         }
@@ -44,6 +45,7 @@ public class Deck {
             card.get(dato); // cual sea el dato, sera la tarjeta que tomara
             numCard--;
             String respuesta = "Tarjeta: " + " color: " + card.get(dato).getColor() + " palo: " + card.get(dato).getPalo() + " valor: " + card.get(dato).getValor() + "\n" + "Quedan: " + numcard;
+            card.remove(dato);
             return respuesta; // se devuelve la respuesta
         }
         
@@ -59,8 +61,9 @@ public class Deck {
                 capturador = capturador.concat(" valor: "+card.get(dato).getValor()+" \n");
                 mano[i] = capturador;
                 capturador = "";
+                card.remove(dato);
             }
-            String respuesta = ""; respuesta = respuesta.concat(Arrays.toString(mano)+"Quednan: " + numcard);
+            String respuesta = ""; respuesta = respuesta.concat(Arrays.toString(mano)+"Quedan: " + numcard);
             return respuesta;
         }
 }
