@@ -42,9 +42,9 @@ public class JuegoDeCartas {
     public static void ShowMenu() {
         Scanner lector = new Scanner(System.in);
         int resp = 1; // variable de control para el switch.
-        while (resp != 0 || deck.getCard().isEmpty()) { // primero verifica sí se cumple la condición y después continua.
+        while (resp != 0) { // primero verifica sí se cumple la condición y después continua.
             System.out.println("Bienvenido a Póker!"
-                    + "\n" + "el tamanho del deck es: " + deck.getCard().size()
+                    + "\n" + "el tamanho del deck es: " + deck.tamanho()
                     + "\n" + "Selecciona una opción: "
                     + "\n" + "1 - Mezclar Deck"
                     + "\n" + "2 - Sacar una carta"
